@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 class action_buttons extends StatelessWidget {
   const action_buttons({super.key});
 
+  Color? get textColor => null;
+
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDark ? Colors.white : Colors.black;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Row(
@@ -35,10 +40,7 @@ class action_buttons extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: const Text(
-                'Message',
-                style: TextStyle(color: Colors.black),
-              ),
+              child: Text('Message', style: TextStyle(color: textColor)),
             ),
           ),
           const SizedBox(width: 8),
@@ -52,13 +54,9 @@ class action_buttons extends StatelessWidget {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text('Contact', style: TextStyle(color: Colors.black)),
-                  Icon(
-                    Icons.keyboard_arrow_down,
-                    size: 18,
-                    color: Colors.black,
-                  ),
+                children: [
+                  Text('Contact', style: TextStyle(color: textColor)),
+                  Icon(Icons.keyboard_arrow_down, size: 18, color: textColor),
                 ],
               ),
             ),

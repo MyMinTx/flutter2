@@ -25,7 +25,7 @@ Widget _buildStatColumn(String count, String label) {
         count,
         style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
-      Text(label, style: const TextStyle(fontSize: 14, color: Colors.black87)),
+      Text(label, style: const TextStyle(fontSize: 14)),
     ],
   );
 }
